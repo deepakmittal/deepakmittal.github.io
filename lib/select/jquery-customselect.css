@@ -13,7 +13,7 @@
 ----------------------------------*/
 .custom-select {
   position: relative;
-  width: 320px;
+  width: 220px;
   height: 36px;
   border: 1px solid #888;
   background: #fff;
@@ -25,7 +25,7 @@
 }
 .custom-select a {
   display: inline-block;
-  width: 300px;
+  width: 200px;
   height: 20px;
   padding: 8px 10px;
   color: #000;

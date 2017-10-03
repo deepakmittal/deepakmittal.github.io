@@ -1,13 +1,17 @@
-    setTimeout(function(){$("#demo").customselect();},10);
+    setupSelect();
+    setTimeout(function(){
+        $("#placeSelect").customselect();},10);
     jQuery.fn.rotate = function(degrees) {
         degrees = 360 - degrees;
         $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
         return $(this);
     };
-    
+    $("#guess").click(function(){
+        guess();
+    });
     function addCityAngle(degrees,id,name){
         var html='<div id="direction_'+id+'" style="display:none;"><div id="arrow_'+id+'" style="width: 300px;position: absolute;" ><img src="img/arrow.png" width="150px" style="float:right"/></div>\
-            <div id="lebal_'+id+'" style="width: 300px;position: absolute;" >'+name+'</div></div>';
+            <div id="lebal_'+id+'" style="position: absolute;" >'+name+'</div></div>';
         $("#wrapper").append(html);
         setTimeout(function(){
         var baseX = 152;
@@ -68,7 +72,54 @@
         var angle = getAngle(refCity, city);
         addCityAngle(angle,c.code,c.city);
     }
+    function setupSelect(){
+        for(var i=0; i<PLACES.length;i++){
+            var place = PLACES[i];
+            var html = '<option value="'+ place.code +'">'+ place.country + " > " + place.city +'</option>';
+            $("#placeSelect").append(html);
+        
+        }
+    }
+    function message(msg, color){
+        $("#message").html(msg);
+        $("#message").css({"color": color });
+        $("#message").show();
+        if(color !=="green"){
+            setTimeout(function(){
+                $("#message").hide();
+            },2000);
+        }
+    }
     
-    addCity(17, 16);
-    addCity(17, 24);
-    addCity(17, 12);
+    function guess(){
+        var place = $("#placeSelect").val();
+        if(place == 0 || GUESSED_PLACES.indexOf(place)!== -1){
+            return;
+        }
+        if(place == UNKNOWN_PLACE.code){
+            message("Correct","green");
+            return;
+        }
+        GUESSED_PLACES.push(place);
+        addCity(UNKNOWN_PLACE.code,place);
+        message("Wrong","orange");
+    }
+    
+    function startPlay(){
+        UNKNOWN_PLACE = getRandomPlace();
+        place = getRandomPlace();
+        place = place.code;
+        for(var i=0;i<3;i++){
+            while(place == UNKNOWN_PLACE.code || GUESSED_PLACES.indexOf(place) !==-1){
+                place = getRandomPlace();
+                console.log(place);
+                place = place.code;
+            }
+            GUESSED_PLACES.push(place);
+            addCity(UNKNOWN_PLACE.code,place);
+        }
+    }
+    var UNKNOWN_PLACE;
+    var GUESSED_PLACES = new Array();
+    startPlay();
+    
