@@ -139,6 +139,14 @@
         GUESSED_PLACES.push(place);
         addCity(UNKNOWN_PLACE.code,place);
     }
+    function initializeGlobe() {
+        var earth = new WE.map('earth_div');
+        WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+          attribution: ''
+        }).addTo(earth);
+      }
+      initializeGlobe();
+      setTimeout(function(){$(".cesium-credit-textContainer").hide();},10);
     var UNKNOWN_PLACE;
     var GUESSED_PLACES = new Array();
     var RAND_ANGLE;
