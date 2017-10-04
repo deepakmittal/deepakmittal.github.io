@@ -4,7 +4,7 @@ PLACES = [
     "city": "Buenos Aires(Argentina)",
     "country": "Argentina",
     "latitude": -34.6,
-    "lognitude": -58.4
+    "lognitude": 58.4
   },
   {
     "code": 2,
@@ -39,21 +39,21 @@ PLACES = [
     "city": "Toronto",
     "country": "Canada",
     "latitude": 43.7,
-    "lognitude": -79.4
+    "lognitude": 79.4
   },
   {
     "code": 44,
     "city": "Vancouver",
     "country": "Canada",
     "latitude": 49.3,
-    "lognitude": -123.1
+    "lognitude": 123.1
   },
   {
     "code": 45,
     "city": "honolulu(Hawaii)",
     "country": "Canada",
     "latitude": 21.3,
-    "lognitude": -157.8
+    "lognitude": 157.8
   },
   {
     "code": 6,
@@ -81,7 +81,7 @@ PLACES = [
     "city": "Havana(Cuba)",
     "country": "Cuba",
     "latitude": 23.11,
-    "lognitude": -82.4
+    "lognitude": 82.4
   },
   {
     "code": 9,
@@ -288,7 +288,7 @@ PLACES = [
   },
   {
     "code": 38,
-    "city": "Zürich",
+    "city": "Zurich",
     "country": "Switzerland",
     "latitude": 47.35,
     "lognitude": -8.31
@@ -304,15 +304,15 @@ PLACES = [
     "code": 40,
     "city": "Los Angeles",
     "country": "USA",
-    "latitude": 34.1,
-    "lognitude": -118.2
+    "latitude": 34.1, 
+    "lognitude": 118.2
   },
   {
     "code": 41,
     "city": "New York",
     "country": "USA",
     "latitude": 40.7,
-    "lognitude": -74
+    "lognitude": 74
   }
 ];
 
