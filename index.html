@@ -6,25 +6,30 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Lost Traveller</title>
         <script src="js/jquery.min.js"></script>
         <script src="js/places.js"></script>
         <script src="lib/select/jquery-customselect.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="lib/jquery-ui-rotatable/jquery.ui.rotatable.min.js"></script>
+        <link href="lib/jquery-ui-rotatable/jquery.ui.rotatable.css" rel="stylesheet" />
         <link href="lib/select/jquery-customselect.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div style="width: 300px;margin: 0 auto;margin-top: 100px;margin-left: 50px">
+        <div style="width: 300px;margin: 0 auto;margin-top: 160px">
             <div style="height:25px">
             <div id = "message" style="text-align: center; font-size: 20px; display: none;    position: absolute;margin-left: 138px;margin-top: -98px "> Correct </div>
             </div>
-            <div id="wrapper"  style="height:265px">
+            <div id="wrapper"  style="height:150px">
             </div>
-        <select id="placeSelect" name="standard" class="custom-select" style="width:200px">
+        <div id="inputBox" style="margin-top:150px">
+        <select id="placeSelect" name="standard" class="custom-select" style="width:200px;margin-top:20px">
             <option value="0">Guess your city..</option>
         </select>
-        <button id="guess" style="float:right;margin-top:-32px"> <div style="margin:5px">Go </div></button>    
+        <button id="guess" style="float:right;margin-top:-32px;margin-right:28px "> <div style="margin:5px">Go </div></button>    
+        </div>
         </div>    
         <script src="js/script.js"></script>        
     </body>
