@@ -145,7 +145,7 @@
           attribution: ''
         }).addTo(earth);
       }
-      initializeGlobe();
+      //initializeGlobe();
       setTimeout(function(){$(".cesium-credit-textContainer").hide();},10);
     var UNKNOWN_PLACE;
     var GUESSED_PLACES = new Array();
