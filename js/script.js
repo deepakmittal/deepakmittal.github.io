@@ -11,7 +11,7 @@
     });
     function addCityAngle(degrees,id,name){
         var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 300px;position: absolute;" ><img src="img/arrow.png" width="150px" style="float:right;opacity: 0.5"/></div>\
-            <div id="lebal_'+degrees+'" style="position: absolute;width:200px" >'+ "" +'</div></div>';
+            <div id="lebal_'+degrees+'" style="position: absolute;" >'+ "" +'</div></div>';
         if(!$("#direction_"+degrees).length){
             $("#wrapper").append(html);
             $('#lebal_' +degrees).text(name);
@@ -80,12 +80,12 @@
         var cRef = getPlace(refCity);
         var c = getPlace(city);
         var angle = getAngle(refCity, city);
-        angle = angle + RAND_ANGLE;
-        angle = angle % 360;
+        //angle = angle + RAND_ANGLE;
+        //angle = angle % 360;
         angle = Math.round(angle/10)*10;
         console.log("angle:"+angle);
 //console.log(angle);
-        angle = angle > 180 ? angle = -1 * (180-angle) : angle;
+        //angle = angle > 180 ? angle = -1 * (180-angle) : angle;
         addCityAngle(angle,c.code,c.city);
     }
     function setupSelect(){
@@ -133,7 +133,7 @@
             }
             addPlace(place);
         }
-        $('#wrapper').rotatable({handleOffset: {left: 170, top:90}});
+        //$('#wrapper').rotatable({handleOffset: {left: 170, top:90}});
     }
     function addPlace(place){
         GUESSED_PLACES.push(place);
