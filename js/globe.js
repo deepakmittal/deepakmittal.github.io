@@ -141,7 +141,7 @@ $(document).ready(function() {
 function showGlobe(){
     $(".no-globe").hide();
     $(".globe").show();
-    $("#inputBox").css({"margin-top":"-10px"});
+    $("#inputBox").css({"margin-top":"0px"});
 }
 function hideGlobe(){
     $(".globe").hide();
