@@ -61,9 +61,13 @@
         var c1 = getPlace(city1);
         var c2 = getPlace(city2);
         var y = c2.latitude - c1.latitude;
-        //y = y > 180 ? y-360 : y;
-        var x=c1.lognitude - c2.lognitude;
-        //x = x > 180 ? x - 360: x;
+        var x =  c1.lognitude - c2.lognitude;
+        
+        // comment these two lines for map like left or right.
+        y = y > 180 ? y-360 : y;
+        x = x > 180 ? x - 360: x;
+        
+        
         console.log(y);
         console.log(x);
         angle = Math.atan(Math.abs(y/x))*180/Math.PI;
