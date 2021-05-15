@@ -89,7 +89,7 @@
         var angle = getAngle(refCity, city);
         //angle = angle + RAND_ANGLE;
         //angle = angle % 360;
-        angle = Math.round(angle/45)*45;
+        angle = Math.round(angle/22.5)*22.5;
         console.log("angle:"+angle);
 //console.log(angle);
         //angle = angle > 180 ? angle = -1 * (180-angle) : angle;
