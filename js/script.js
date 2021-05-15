@@ -9,6 +9,9 @@
     $("#guess").click(function(){
         guess();
     });
+    $("#placeSelect").change(function(){
+        guess();
+    });
     function addCityAngle(degrees,id,name){
         var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 300px;position: absolute;" ><img src="img/arrow.png" width="150px" style="float:right;opacity: 0.5"/></div>\
             <div id="lebal_'+degrees+'" style="position: absolute;" >'+ "" +'</div></div>';
