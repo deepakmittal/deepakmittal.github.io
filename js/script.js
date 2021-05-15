@@ -121,6 +121,7 @@
         }
         if(place == UNKNOWN_PLACE.code){
             message("Correct","green");
+            alert("Correct! The place is " + UNKNOWN_PLACE["city"] + " ("+  UNKNOWN_PLACE["country"] +")");
             return;
         }
         addPlace(place);
