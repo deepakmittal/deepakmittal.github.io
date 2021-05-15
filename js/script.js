@@ -1,5 +1,4 @@
     setupSelect();
-
     setTimeout(function(){
         $("#placeSelect").customselect();},10);
     jQuery.fn.rotate = function(degrees) {
@@ -7,7 +6,6 @@
         $(this).css({'transform' : 'rotate('+ degrees +'deg)'});
         return $(this);
     };
-
     $("#guess").click(function(){
         guess();
     });
@@ -156,7 +154,7 @@
         }).addTo(earth);
       }
       //initializeGlobe();
-      //setTimeout(function(){$(".cesium-credit-textContainer").hide();},10);
+      setTimeout(function(){$(".cesium-credit-textContainer").hide();},10);
     var UNKNOWN_PLACE;
     var GUESSED_PLACES = new Array();
     var RAND_ANGLE;
