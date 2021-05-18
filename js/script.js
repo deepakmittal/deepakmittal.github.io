@@ -14,7 +14,7 @@
         }
         
         setTimeout(function(){
-        var baseX = 152;
+        var baseX = 172;
         var baseY = 65;
         var x = 150 * Math.cos(degrees*(Math.PI / 180));
         var y = 150 * Math.sin(degrees*(Math.PI / 180));
@@ -169,7 +169,7 @@
         $("#wrapper").html("");
         GUESSED_PLACES = new Array();
         UNKNOWN_PLACE = getRandomPlace();
-        UNKNOWN_PLACE = PLACES[8];
+        //UNKNOWN_PLACE = PLACES[8];
         GUESSED_PLACES.push(UNKNOWN_PLACE.code);
         RAND_ANGLE = Math.random() * 360;
         place = getRandomPlace();
