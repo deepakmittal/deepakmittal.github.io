@@ -31,12 +31,20 @@
         console.log(x);
         console.log(y);
         length = $('#lebal_' +degrees).text().length;
-        x = x<0 ? x-(name.length*8) : x+10;
-        console.log(name + ":x:"+ x + ":y:"+ y);
-        var yAdjust = Math.abs(x) < 95 ? 0.05 * (y/Math.abs(y))* Math.pow(Math.abs(y),1.3) : 0;
+        x = x< -50 ? x-(length*8) : x+10;
+        if(x < -170 || x+(length*8) > 190){
+            x = x < -170 ? -170 : 190 -(length*8);
+            y = y > 0 ?  y+=20 : y -=20;
+        }
+        console.log(length + ":x:"+ x + ":y:"+ y);
+        //var yAdjust = Math.abs(x) < 95 ? 0.05 * (y/Math.abs(y))* Math.pow(Math.abs(y),1.3) : 0;
+        yAdjust = 0;
         y = y<0 ? y-10 : y+10;
+        y = y < -160?-160:y;
+        y = y > 160?160:y;
         x = baseX + x;
         y = baseY - y - yAdjust;    
+        
         $("#arrow_"+degrees).rotate(degrees);
         $("#lebal_"+degrees).css({ 
                             marginLeft : x +"px", 
