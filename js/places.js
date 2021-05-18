@@ -1,318 +1,374 @@
+
+ZONES = {
+  "americas": {
+        "label": "Americas"
+  },
+  "europe": {
+        "label": "Europe"
+  },
+  "africa": {
+        "label": "Africa"
+  },
+  "asia-pacific": {
+        "label": "Asia ++"
+  },
+
+}
+
+
+
 PLACES = [
   {
     "code": 1,
     "city": "Buenos Aires(Argentina)",
     "country": "Argentina",
     "latitude": -34.6,
-    "lognitude": 58.4
+    "lognitude": 58.4,
+    "continent":"americas"
   },
   {
     "code": 2,
     "city": "Perth",
     "country": "Australia",
     "latitude": -31.95,
-    "lognitude": -115.52
+    "lognitude": -115.52,
+    "continent":"asia-pacific"
   },
   {
     "code": 3,
     "city": "Sydney",
     "country": "Australia",
     "latitude": -34,
-    "lognitude": -151
+    "lognitude": -151,
+    "continent":"asia-pacific"
   },
   {
     "code": 4,
     "city": "Brussels",
     "country": "Belgium",
     "latitude": 50.86666667,
-    "lognitude": -4.22
+    "lognitude": -4.22,
+    "continent":"europe"
   },
   {
     "code": 5,
     "city": "Rio de Janeiro",
     "country": "Brazil",
     "latitude": -22.95,
-    "lognitude": 43.12
+    "lognitude": 43.12,
+    "continent":"americas"
   },
   {
     "code": 43,
     "city": "Toronto",
     "country": "Canada",
     "latitude": 43.7,
-    "lognitude": 79.4
+    "lognitude": 79.4,
+    "continent":"americas"
   },
   {
     "code": 44,
     "city": "Vancouver",
     "country": "Canada",
     "latitude": 49.3,
-    "lognitude": 123.1
+    "lognitude": 123.1,
+    "continent":"americas"
   },
   {
     "code": 45,
     "city": "honolulu(Hawaii)",
-    "country": "Canada",
+    "country": "USA",
     "latitude": 21.3,
-    "lognitude": 157.8
+    "lognitude": 157.8,
+    "continent":"americas"
   },
   {
     "code": 6,
     "city": "Beijing",
     "country": "China",
     "latitude": 39.91666667,
-    "lognitude": -116.25
+    "lognitude": -116.25,
+    "continent":"asia-pacific"
   },
   {
     "code": 7,
     "city": "Hong Kong",
     "country": "China",
     "latitude": 22.33333333,
-    "lognitude": -114.11
+    "lognitude": -114.11,
+    "continent":"asia-pacific"
   },
   {
     "code": 8,
     "city": "Shanghai",
     "country": "China",
     "latitude": 31.16666667,
-    "lognitude": -121.28
+    "lognitude": -121.28,
+    "continent":"asia-pacific"
   },
   {
     "code": 46,
     "city": "Havana(Cuba)",
     "country": "Cuba",
     "latitude": 23.11,
-    "lognitude": 82.4
+    "lognitude": 82.4,
+    "continent":"americas"
   },
   {
     "code": 9,
     "city": "Prague",
     "country": "Czech Republic",
     "latitude": 50.08333333,
-    "lognitude": -14.26
+    "lognitude": -14.26,
+    "continent":"europe"
   },
   {
     "code": 10,
     "city": "Cairo",
     "country": "Egypt",
     "latitude": 30.03333333,
-    "lognitude": -31.21
+    "lognitude": -31.21,
+    "continent":"africa"
   },
   {
     "code": 11,
     "city": "London",
     "country": "England",
     "latitude": 51.53333333,
-    "lognitude": 0.05
+    "lognitude": 0.05,
+    "continent":"europe"
   },
   {
     "code": 12,
     "city": "Paris",
     "country": "France",
     "latitude": 48.8,
-    "lognitude": -2.2
+    "lognitude": -2.2,
+    "continent":"europe"
   },
   {
     "code": 13,
     "city": "Berlin",
     "country": "Germany",
     "latitude": 52.5,
-    "lognitude": -13.25
+    "lognitude": -13.25,
+    "continent":"europe"
   },
   {
     "code": 14,
     "city": "Athens",
     "country": "Greece",
     "latitude": 37.96666667,
-    "lognitude": -23.43
+    "lognitude": -23.43,
+    "continent":"europe"
   },
   {
     "code": 15,
     "city": "Reykjavík(Iceland)",
     "country": "Iceland",
     "latitude": 64.06666667,
-    "lognitude": 21.58
+    "lognitude": 21.58,
+    "continent":"europe"
   },
   {
     "code": 16,
     "city": "Bombay",
     "country": "India",
     "latitude": 19,
-    "lognitude": -72.48
+    "lognitude": -72.48,
+    "continent":"asia-pacific"
   },
   {
     "code": 17,
     "city": "New Delhi",
     "country": "India",
     "latitude": 28.58333333,
-    "lognitude": -77.12
+    "lognitude": -77.12,
+    "continent":"asia-pacific"
   },
   {
     "code": 18,
     "city": "Jakarta",
     "country": "Indonesia",
     "latitude": -6.266666667,
-    "lognitude": -106.48
+    "lognitude": -106.48,
+    "continent":"asia-pacific"
   },
   {
     "code": 19,
     "city": "Rome",
     "country": "Italy",
     "latitude": 41.9,
-    "lognitude": -12.27
+    "lognitude": -12.27,
+    "continent":"europe"
   },
   {
     "code": 20,
     "city": "Venice",
     "country": "Italy",
     "latitude": 45.43333333,
-    "lognitude": -12.2
+    "lognitude": -12.2,
+    "continent":"europe"
   },
   {
     "code": 21,
     "city": "Tokyo",
     "country": "Japan",
     "latitude": 35.66666667,
-    "lognitude": -139.45
+    "lognitude": -139.45,
+    "continent":"asia-pacific"
   },
   {
     "code": 22,
     "city": "Nairobi",
     "country": "Kenya",
     "latitude": -1.416666667,
-    "lognitude": -36.55
+    "lognitude": -36.55,
+    "continent":"africa"
   },
   {
     "code": 23,
     "city": "Tananarive",
     "country": "Madagascar",
     "latitude": -18.83333333,
-    "lognitude": -47.33
+    "lognitude": -47.33,
+    "continent":"africa"
   },
   {
     "code": 24,
     "city": "Kuala Lumpur",
     "country": "Malaysia",
     "latitude": 3.133333333,
-    "lognitude": -101.42
+    "lognitude": -101.42,
+    "continent":"asia-pacific"
   },
   {
     "code": 25,
     "city": "Mexico City",
     "country": "Mexico",
     "latitude": 19.43333333,
-    "lognitude": 99.07
+    "lognitude": 99.07,
+    "continent":"americas"
   },
   {
     "code": 26,
     "city": "Rangoon",
     "country": "Myanmar",
     "latitude": 16.83333333,
-    "lognitude": -96
+    "lognitude": -96,
+    "continent":"asia-pacific"
   },
   {
     "code": 27,
     "city": "Amsterdam",
     "country": "Netherlands",
     "latitude": 52.36666667,
-    "lognitude": -4.53
+    "lognitude": -4.53,
+    "continent":"europe"
   },
   {
     "code": 28,
     "city": "Auckland",
     "country": "New Zealand",
     "latitude": -36.86666667,
-    "lognitude": -174.45
-  },
-  {
-    "code": 29,
-    "city": "Panama City",
-    "country": "Panama",
-    "latitude": 8.966666667,
-    "lognitude": 79.32
+    "lognitude": -174.45,
+    "continent":"asia-pacific"
   },
   {
     "code": 30,
     "city": "Lisbon",
     "country": "Portugal",
     "latitude": 38.73333333,
-    "lognitude": 9.09
+    "lognitude": 9.09,
+    "continent":"europe"
   },
   {
     "code": 31,
     "city": "Moscow",
     "country": "Russia",
     "latitude": 55.75,
-    "lognitude": -37.36
+    "lognitude": -37.36,
+    "continent":"europe"
   },
   {
     "code": 32,
     "city": "Mecca",
     "country": "Saudi Arabia",
     "latitude": 21.48333333,
-    "lognitude": -39.45
+    "lognitude": -39.45,
+    "continent":"asia-pacific"
   },
   {
     "code": 33,
     "city": "Singapore",
     "country": "Singapore",
     "latitude": 1.233333333,
-    "lognitude": -103.55
+    "lognitude": -103.55,
+    "continent":"asia-pacific"
   },
   {
     "code": 34,
     "city": "Cape Town",
     "country": "South Africa",
     "latitude": -33.91666667,
-    "lognitude": -18.22
+    "lognitude": -18.22,
+    "continent":"africa"
   },
   {
     "code": 35,
     "city": "Johannesburg",
     "country": "South Africa",
     "latitude": -26.2,
-    "lognitude": -28.04
+    "lognitude": -28.04,
+    "continent":"africa"
   },
   {
     "code": 36,
     "city": "Barcelona",
     "country": "Spain",
     "latitude": 41.38333333,
-    "lognitude": -2.09
+    "lognitude": -2.09,
+    "continent":"europe"
   },
   {
     "code": 37,
     "city": "Stockholm",
     "country": "Sweden",
     "latitude": 59.28333333,
-    "lognitude": -18.03
+    "lognitude": -18.03,
+    "continent":"europe"
   },
   {
     "code": 38,
     "city": "Zurich",
     "country": "Switzerland",
     "latitude": 47.35,
-    "lognitude": -8.31
+    "lognitude": -8.31,
+    "continent":"europe"
   },
   {
     "code": 39,
     "city": "Bangkok",
     "country": "Thailand",
     "latitude": 13.75,
-    "lognitude": -100.3
+    "lognitude": -100.3,
+    "continent":"asia-pacific"
   },
   {
     "code": 40,
     "city": "Los Angeles",
     "country": "USA",
     "latitude": 34.1, 
-    "lognitude": 118.2
+    "lognitude": 118.2,
+    "continent":"americas"
   },
   {
     "code": 41,
     "city": "New York",
     "country": "USA",
     "latitude": 40.7,
-    "lognitude": 74
+    "lognitude": 74,
+    "continent":"americas"
   }
 ];
 
