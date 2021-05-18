@@ -39,55 +39,30 @@ and open the template in the editor.
   style='width: 300px; height: 300px; cursor: move;'></canvas>
             </div>
             </div>
-            <div id="inputBox" style="margin-top:350px;">
-            <!--a id="inline" href="#earth_div" class="no-globe" onclick="showGlobe();">globe</a-->
-            <a id="inline" href="#earth_div" class="globe" style="display:none" onclick="hideGlobe();">hide globe</a>
-        <div style="width:400px;margin-left:-50px;font-size:20px;">        
-        <select id="placeSelect" name="standard" class="custom-select">
-            <option value="0">Guess your city..</option>
-        </select>
-        </div>    
-        <!--button id="guess" style="float:right;margin-top:-32px;margin-right:28px "> <div style="margin:5px">Go </div></button--> 
-        </div>
-            
-            <div class="container">
+            <div id="inputBox" style="margin-top:250px;">
+        <div class="container" style="width:400px; margin-left: -50px">
   
                         
-                        <h4>Guess Your City</h4>
+              <h4>Guess Your City</h4>
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Americas</a></li>
-                <li><a data-toggle="tab" href="#menu1">Menu 1</a>Europe</li>
-                <li><a data-toggle="tab" href="#menu2">Menu 2</a>Africa</li>
-                <li><a data-toggle="tab" href="#menu3">Menu 3</a>Asia-Pacific</li>
+                <li><a data-toggle="tab" href="#menu1">Europe</a></li>
+                <li><a data-toggle="tab" href="#menu2">Africa</a></li>
+                <li><a data-toggle="tab" href="#menu3">Asia-Pacific</a></li>
                 </ul>
                         
               <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
-                  <h3>Americas</h3>
                   <div class="checkbox">
-                      <label><input type="checkbox" value="">San Francisco</label>
+                      <label style="width: 150px"><input type="checkbox" value="">San Francisco</label>
+                      <label style="width: 150px"><input type="checkbox" value="">Mexico</label>
+                      <label style="width: 150px"><input type="checkbox" value="">Cairo</label>
+                      <label style="width: 150px"><input type="checkbox" value="">New York</label>
+                      <label style="width: 150px"><input type="checkbox" value="">San Francisco</label>
+                      <label style="width: 150px"><input type="checkbox" value="">Mexico</label>
+                      <label style="width: 150px"><input type="checkbox" value="">Cairo</label>
+                      <label style="width: 150px"><input type="checkbox" value="">New York</label>
                   </div>
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="">Mexico</label>
-                  </div>
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="">Cairo</label>
-                  </div>
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="">New York</label>
-                  </div>  
-                                    <div class="checkbox">
-                      <label><input type="checkbox" value="">San Francisco</label>
-                  </div>
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="">Mexico</label>
-                  </div>
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="">Cairo</label>
-                  </div>
-                  <div class="checkbox">
-                      <label><input type="checkbox" value="">New York</label>
-                  </div>   
                 </div>
                 <div id="menu1" class="tab-pane fade">
                   <h3>Menu 1</h3>
@@ -103,7 +78,13 @@ and open the template in the editor.
                 </div>
               </div>
             </div>
-        </div>    
+        </div>  
+
+
+
+        </div>
+            
+              
         <script src="js/script.js"></script> 
 
 
