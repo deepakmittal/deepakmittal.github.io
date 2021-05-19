@@ -22,10 +22,11 @@
         console.log(y);
         length = $('#lebal_' +degrees).text().length*8;
         height =  parseInt(length / 160);
-        length = length > 160? 160: length;
+        //length = length > 100? 100: length;
+        length = 100;
         x = x< -50 ? x-(length) : x+10;
-        if(x < -170 || x+(length) > 180){
-            x = x < -170 ? -170 : 180 - length;
+        if(x < -170 || x+(length) > 185){
+            x = x < -170 ? -170 : 185 - length;
             y = y > 0 ?  y+=20 : y -=20;
         }
         console.log(length + ":x:"+ x + ":y:"+ y);
