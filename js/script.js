@@ -3,8 +3,8 @@
 
 
     function addCityAngle(degrees,id,name){
-        var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 320px;position: absolute;" ><img src="img/arrow.png" width="160px" style="float:right;opacity: 0.5"/></div>\
-            <div id="lebal_'+degrees+'" style="width:150px; position: absolute;" >'+ "" +'</div></div>';
+        var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 320px;position: absolute;z-index: -1;" ><img src="img/arrow.png" width="160px" style="float:right;opacity: 0.5"/></div>\
+            <div id="lebal_'+degrees+'" style="width:100px; position: absolute;text-shadow: 0px 0px 2px #ffffff;" >'+ "" +'</div></div>';
         if(!$("#direction_"+degrees).length){
             $("#wrapper").append(html);
             $('#lebal_' +degrees).text(name);
@@ -24,16 +24,16 @@
         height =  parseInt(length / 160);
         length = length > 160? 160: length;
         x = x< -50 ? x-(length) : x+10;
-        if(x < -170 || x+(length) > 190){
-            x = x < -170 ? -170 : 190 - length;
+        if(x < -170 || x+(length) > 180){
+            x = x < -170 ? -170 : 180 - length;
             y = y > 0 ?  y+=20 : y -=20;
         }
         console.log(length + ":x:"+ x + ":y:"+ y);
         //var yAdjust = Math.abs(x) < 95 ? 0.05 * (y/Math.abs(y))* Math.pow(Math.abs(y),1.3) : 0;
         yAdjust = 0;
         y = y<0 ? y-10 : y+10;
-        y = y < -160?-160:y;
-        y = y > 160?160:y;
+        y = y < -170?-170:y;
+        y = y > 170?170:y;
         x = baseX + x;
         y = y > 130 ? y + (height*10) : y;
         y = baseY - y - yAdjust;    
@@ -130,7 +130,7 @@
         
         for(var i=0; i<PLACES.length;i++){
             var place = PLACES[i];
-            var html = '<label id="city-label-'+place.code+'" style="width: 180px"><input id="city-check-'+place.code+'" class="city-check" type="checkbox" value="'+place.code+'">'+place.city+'</label>'
+            var html = '<label id="city-label-'+place.code+'" style="width: 160px"><input id="city-check-'+place.code+'" class="city-check" type="checkbox" value="'+place.code+'">'+place.city+'</label>'
             $("#tab-content-"+place.continent).append(html);
         }
         $(".city-check").change(function(){
@@ -212,5 +212,8 @@
         var current = this.css( 'color' );
         this.animate( { color: 'rgb(' + color + ')' }, duration / 2 );
         this.animate( { color: current }, duration / 2 );
+    }
+    if(window.innerHeight > 830){
+        $("#inputBox").css({"margin-top":"180px"});
     }
     setup();
