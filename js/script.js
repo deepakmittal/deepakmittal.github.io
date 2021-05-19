@@ -141,6 +141,13 @@
         $("#new-button").click(function(){
             setup();
         });
+        $("#new-game-button").click(function(){
+            $('#game-end-modal').modal('hide');
+            setup();
+        });
+        $("#help-button").click(function(){
+            help();
+        });
     }
     function message(msg, color){
         $("#message").html(msg);
@@ -157,17 +164,43 @@
         if(place == 0 || GUESSED_PLACES.indexOf(place)!== -1){
             return;
         }
+        GUESS_COUNT++;
         if(place == UNKNOWN_PLACE.code){
-            message("Correct","green");
-            alert("Correct! The place is " + UNKNOWN_PLACE["city"] + " ("+  UNKNOWN_PLACE["country"] +")");
+            //message("Correct","green");
+            $(".city-check").attr("disabled", true);
+            win();
             return;
         }
         addPlace(place);
-        message("Wrong","orange");
+        if(GUESS_COUNT > 6){
+            $(".city-check").attr("disabled", true);
+            loose();
+        }
+    }
+
+    function gameEnd(title, content){
+        $("#game-end-title").text(title);
+        $("#game-end-content").text(content);
+        $("#game-end-modal").modal('show');
     }
     
+    function win(){
+        gameEnd(
+            "Found! The place is "+ UNKNOWN_PLACE.city +".",
+                GUESS_COUNT < 2 ? "Strike! You found the place in first try!" : "You took " +GUESS_COUNT+ " tries."
+            );
+    }
+
+    function loose(){
+        gameEnd("Game Over!", "Please start reading maps and globes.")
+    }
+    
+    function help(){
+        $("#help-modal").modal('show');
+    }
     function startPlay(){
         $("#wrapper").html("");
+        GUESS_COUNT = 0;
         GUESSED_PLACES = new Array();
         UNKNOWN_PLACE = getRandomPlace();
         //UNKNOWN_PLACE = PLACES[8];
@@ -201,6 +234,7 @@
       setTimeout(function(){$(".cesium-credit-textContainer").hide();},10);
     var UNKNOWN_PLACE;
     var GUESSED_PLACES = new Array();
+    var GUESS_COUNT;
     var RAND_ANGLE;
 
     jQuery.fn.rotate = function(degrees) {

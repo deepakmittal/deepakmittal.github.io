@@ -12,7 +12,6 @@ and open the template in the editor.
         <script src="lib/select/jquery-customselect.js"></script>
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="lib/rotate/jquery.ui.rotatable.min.js"></script>
-        <script src="https://www.webglearth.com/v2/api.js"></script>
         <link href="lib/rotate/jquery.ui.rotatable.css" rel="stylesheet" />
         <link href="lib/select/jquery-customselect.css" rel="stylesheet" />
         <script type="text/javascript" src="lib/fancybox/dist/jquery.fancybox.min.js"></script>
@@ -29,7 +28,7 @@ and open the template in the editor.
         <div style="width: 360px;margin: 0 auto;overflow: hidden;">
             <div style="float:right">  
                   <button type="button" id="new-button" class="btn btn-primary">New</button>
-                  <!--button type="button" class="btn btn-primary btn-sm">Help</button-->
+                  <button type="button" id="help-button" class="btn btn-secondary">Help</button>
             </div>
             <div style="height:25px">
             <div id = "message" style="text-align: center; font-size: 20px; display: none;    position: absolute;margin-left: 138px;margin-top: -140px "> Correct </div>
@@ -52,7 +51,43 @@ and open the template in the editor.
               </div>
             </div>
         </div>  
-
+          <!-- Modal Game End-->
+          <div class="modal fade" id="game-end-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <h4 id="game-end-title">Found! The city is Delhi.</h4>
+                  <div id="game-end-content">You took 4 guess. Try to find the next city faster.</div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="new-game-button">New Game</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Help-->
+          <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <h4 id="game-end-title">How to play</h4>
+                  <div id="game-end-content">
+                    Find the city.
+                    <ul>
+                      <li> Arrows show the direction to certain cities from the unknown city.</li>
+                      <li> With arrows as hints, guess the unknown city by selecting one city from the list at the bottom.</li>
+                      <li> Each incorrect guess adds an arrow as a new hint.</li>
+                      <li> Earth is round!</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
         </div>

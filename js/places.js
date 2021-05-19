@@ -19,14 +19,6 @@ ZONES = {
 
 PLACES = [
   {
-    "code": 1,
-    "city": "Buenos Aires(Argentina)",
-    "country": "Argentina",
-    "latitude": -34.6,
-    "lognitude": 58.4,
-    "continent":"americas"
-  },
-  {
     "code": 2,
     "city": "Perth",
     "country": "Australia",
@@ -83,14 +75,6 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 6,
-    "city": "Beijing",
-    "country": "China",
-    "latitude": 39.91666667,
-    "lognitude": -116.25,
-    "continent":"asia-pacific"
-  },
-  {
     "code": 7,
     "city": "Hong Kong",
     "country": "China",
@@ -100,18 +84,10 @@ PLACES = [
   },
   {
     "code": 8,
-    "city": "Shanghai",
-    "country": "China",
-    "latitude": 31.16666667,
-    "lognitude": -121.28,
-    "continent":"asia-pacific"
-  },
-  {
-    "code": 46,
-    "city": "Havana(Cuba)",
-    "country": "Cuba",
-    "latitude": 23.11,
-    "lognitude": 82.4,
+    "city": "San Francisco",
+    "country": "USA",
+    "latitude": 37.8,
+    "lognitude": 122.4,
     "continent":"americas"
   },
   {
@@ -124,7 +100,7 @@ PLACES = [
   },
   {
     "code": 10,
-    "city": "Cairo",
+    "city": "Cairo(Egypt)",
     "country": "Egypt",
     "latitude": 30.03333333,
     "lognitude": -31.21,
@@ -220,7 +196,7 @@ PLACES = [
   },
   {
     "code": 22,
-    "city": "Nairobi",
+    "city": "Nairobi(Kenya)",
     "country": "Kenya",
     "latitude": -1.416666667,
     "lognitude": -36.55,
@@ -228,7 +204,7 @@ PLACES = [
   },
   {
     "code": 23,
-    "city": "Tananarive",
+    "city": "Tananarive (Madagascar)",
     "country": "Madagascar",
     "latitude": -18.83333333,
     "lognitude": -47.33,
@@ -252,11 +228,11 @@ PLACES = [
   },
   {
     "code": 26,
-    "city": "Rangoon",
-    "country": "Myanmar",
-    "latitude": 16.83333333,
-    "lognitude": -96,
-    "continent":"asia-pacific"
+    "city": "Miami",
+    "country": "USA",
+    "latitude": 25.8,
+    "lognitude": 80.2,
+    "continent":"americas"
   },
   {
     "code": 27,
@@ -316,10 +292,10 @@ PLACES = [
   },
   {
     "code": 35,
-    "city": "Johannesburg",
-    "country": "South Africa",
-    "latitude": -26.2,
-    "lognitude": -28.04,
+    "city": "Lagos(Nigeria)",
+    "country": "Nigeria",
+    "latitude": 6.5,
+    "lognitude": 3.4,
     "continent":"africa"
   },
   {
@@ -369,6 +345,54 @@ PLACES = [
     "latitude": 40.7,
     "lognitude": 74,
     "continent":"americas"
+  },
+  {
+    "code": 42,
+    "city": "Chicago",
+    "country": "Turkey",
+    "latitude": 41.9,
+    "lognitude": 87.6,
+    "continent":"europe"
+  },
+  {
+    "code": 43,
+    "city": "Istanbul",
+    "country": "USA",
+    "latitude": 41.0,
+    "lognitude": -30.0,
+    "continent":"americas"
+  },
+  {
+    "code": 44,
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 41.0,
+    "lognitude": -30.0,
+    "continent":"europe"
+  },
+  {
+    "code": 45,
+    "city": "Dubai",
+    "country": "UAE",
+    "latitude": 25.2,
+    "lognitude": -55.3,
+    "continent":"asia-pacific"
+  },
+  {
+    "code": 46,
+    "city": "Baghdad(Iraq)",
+    "country": "Iraq",
+    "latitude": 33.2,
+    "lognitude": -43.7,
+    "continent":"asia-pacific"
+  },
+  {
+    "code": 47,
+    "city": "Baghdad(Iraq)",
+    "country": "Iraq",
+    "latitude": 33.2,
+    "lognitude": -43.7,
+    "continent":"asia-pacific"
   }
 ];
 
