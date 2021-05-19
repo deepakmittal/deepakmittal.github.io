@@ -19,7 +19,7 @@ ZONES = {
 
 PLACES = [
   {
-    "code": 2,
+    "code": 1,
     "city": "Perth",
     "country": "Australia",
     "latitude": -31.95,
@@ -27,7 +27,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 3,
+    "code": 2,
     "city": "Sydney",
     "country": "Australia",
     "latitude": -34,
@@ -35,7 +35,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 4,
+    "code": 3,
     "city": "Brussels",
     "country": "Belgium",
     "latitude": 50.86666667,
@@ -43,7 +43,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 5,
+    "code": 4,
     "city": "Rio de Janeiro",
     "country": "Brazil",
     "latitude": -22.95,
@@ -51,7 +51,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 43,
+    "code": 5,
     "city": "Toronto",
     "country": "Canada",
     "latitude": 43.7,
@@ -59,7 +59,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 44,
+    "code": 6,
     "city": "Vancouver",
     "country": "Canada",
     "latitude": 49.3,
@@ -67,7 +67,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 45,
+    "code": 7,
     "city": "honolulu(Hawaii)",
     "country": "USA",
     "latitude": 21.3,
@@ -75,7 +75,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 7,
+    "code": 8,
     "city": "Hong Kong",
     "country": "China",
     "latitude": 22.33333333,
@@ -83,7 +83,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 8,
+    "code": 9,
     "city": "San Francisco",
     "country": "USA",
     "latitude": 37.8,
@@ -91,7 +91,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 9,
+    "code": 10,
     "city": "Prague",
     "country": "Czech Republic",
     "latitude": 50.08333333,
@@ -99,7 +99,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 10,
+    "code": 11,
     "city": "Cairo(Egypt)",
     "country": "Egypt",
     "latitude": 30.03333333,
@@ -107,7 +107,7 @@ PLACES = [
     "continent":"africa"
   },
   {
-    "code": 11,
+    "code": 12,
     "city": "London",
     "country": "England",
     "latitude": 51.53333333,
@@ -115,7 +115,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 12,
+    "code": 13,
     "city": "Paris",
     "country": "France",
     "latitude": 48.8,
@@ -123,7 +123,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 13,
+    "code": 14,
     "city": "Berlin",
     "country": "Germany",
     "latitude": 52.5,
@@ -131,7 +131,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 14,
+    "code": 15,
     "city": "Athens",
     "country": "Greece",
     "latitude": 37.96666667,
@@ -139,7 +139,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 15,
+    "code": 16,
     "city": "Reykjavík(Iceland)",
     "country": "Iceland",
     "latitude": 64.06666667,
@@ -147,7 +147,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 16,
+    "code": 17,
     "city": "Bombay",
     "country": "India",
     "latitude": 19,
@@ -155,7 +155,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 17,
+    "code": 18,
     "city": "New Delhi",
     "country": "India",
     "latitude": 28.58333333,
@@ -163,7 +163,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 18,
+    "code": 19,
     "city": "Jakarta",
     "country": "Indonesia",
     "latitude": -6.266666667,
@@ -171,7 +171,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 19,
+    "code": 20,
     "city": "Rome",
     "country": "Italy",
     "latitude": 41.9,
@@ -179,7 +179,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 20,
+    "code": 21,
     "city": "Venice",
     "country": "Italy",
     "latitude": 45.43333333,
@@ -187,7 +187,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 21,
+    "code": 22,
     "city": "Tokyo",
     "country": "Japan",
     "latitude": 35.66666667,
@@ -195,7 +195,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 22,
+    "code": 23,
     "city": "Nairobi(Kenya)",
     "country": "Kenya",
     "latitude": -1.416666667,
@@ -203,7 +203,7 @@ PLACES = [
     "continent":"africa"
   },
   {
-    "code": 23,
+    "code": 24,
     "city": "Tananarive (Madagascar)",
     "country": "Madagascar",
     "latitude": -18.83333333,
@@ -211,7 +211,7 @@ PLACES = [
     "continent":"africa"
   },
   {
-    "code": 24,
+    "code": 25,
     "city": "Kuala Lumpur",
     "country": "Malaysia",
     "latitude": 3.133333333,
@@ -219,7 +219,7 @@ PLACES = [
     "continent":"asia-pacific"
   },
   {
-    "code": 25,
+    "code": 26,
     "city": "Mexico City",
     "country": "Mexico",
     "latitude": 19.43333333,
@@ -227,7 +227,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 26,
+    "code": 27,
     "city": "Miami",
     "country": "USA",
     "latitude": 25.8,
@@ -235,7 +235,7 @@ PLACES = [
     "continent":"americas"
   },
   {
-    "code": 27,
+    "code": 28,
     "city": "Amsterdam",
     "country": "Netherlands",
     "latitude": 52.36666667,
@@ -243,7 +243,7 @@ PLACES = [
     "continent":"europe"
   },
   {
-    "code": 28,
+    "code": 29,
     "city": "Auckland",
     "country": "New Zealand",
     "latitude": -36.86666667,
@@ -352,7 +352,7 @@ PLACES = [
     "country": "Turkey",
     "latitude": 41.9,
     "lognitude": 87.6,
-    "continent":"europe"
+    "continent":"americas"
   },
   {
     "code": 43,
