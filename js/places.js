@@ -360,7 +360,7 @@ PLACES = [
     "country": "USA",
     "latitude": 41.0,
     "lognitude": -30.0,
-    "continent":"americas"
+    "continent":"europe"
   },
   {
     "code": 44,

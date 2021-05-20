@@ -3,7 +3,7 @@
 
 
     function addCityAngle(degrees,id,name){
-        var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 320px;position: absolute;z-index: -1;" ><img src="img/arrow.png" width="160px" style="float:right;opacity: 0.5"/></div>\
+        var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 320px;position: absolute;z-index: -1;" ><img src="img/arrow.png" width="160px" style="float:right;opacity: 0.8"/></div>\
             <div id="lebal_'+degrees+'" style="width:100px; position: absolute;text-shadow: 0px 0px 2px #ffffff;" >'+ "" +'</div></div>';
         if(!$("#direction_"+degrees).length){
             $("#wrapper").append(html);
