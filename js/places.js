@@ -349,7 +349,7 @@ PLACES = [
   {
     "code": 42,
     "city": "Chicago",
-    "country": "Turkey",
+    "country": "USA",
     "latitude": 41.9,
     "lognitude": 87.6,
     "continent":"americas"
@@ -357,17 +357,17 @@ PLACES = [
   {
     "code": 43,
     "city": "Istanbul",
-    "country": "USA",
+    "country": "Turkey",
     "latitude": 41.0,
-    "lognitude": -30.0,
+    "lognitude": -29.0,
     "continent":"europe"
   },
   {
     "code": 44,
     "city": "Jerusalem",
     "country": "Israel",
-    "latitude": 41.0,
-    "lognitude": -30.0,
+    "latitude": 31.8,
+    "lognitude": -35.2,
     "continent":"europe"
   },
   {
@@ -388,10 +388,10 @@ PLACES = [
   },
   {
     "code": 47,
-    "city": "Baghdad(Iraq)",
-    "country": "Iraq",
-    "latitude": 33.2,
-    "lognitude": -43.7,
+    "city": "Beijing",
+    "country": "China",
+    "latitude": 39.9,
+    "lognitude": -116.4,
     "continent":"asia-pacific"
   }
 ];

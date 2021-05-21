@@ -1,9 +1,30 @@
     
+FBInstant.initializeAsync()
+  .then(function(){
+          
+          FBInstant.startGameAsync()
+          .then(function() {
+          // Retrieving context and player information can only be done
+          // once startGameAsync() resolves
+          var contextId = FBInstant.context.getID();
+          var contextType = FBInstant.context.getType();
 
+          var playerName = FBInstant.player.getName();
+          var playerPic = FBInstant.player.getPhoto();
+          var playerId = FBInstant.player.getID();
+
+          // Once startGameAsync() resolves it also means the loading view has 
+          // been removed and the user can see the game viewport
+          setup();
+        });
+
+  });
+    
+;
 
 
     function addCityAngle(degrees,id,name){
-        var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 320px;position: absolute;z-index: -1;" ><img src="img/arrow.png" width="160px" style="float:right;opacity: 0.8"/></div>\
+        var html='<div id="direction_'+degrees+'" style="display:none;"><div id="arrow_'+degrees+'" style="width: 320px;position: absolute;z-index: -2;" ><img src="img/arrow.png" width="160px" style="float:right;opacity: 0.7"/></div>\
             <div id="lebal_'+degrees+'" style="width:100px; position: absolute;text-shadow: 0px 0px 2px #ffffff;" >'+ "" +'</div></div>';
         if(!$("#direction_"+degrees).length){
             $("#wrapper").append(html);
@@ -16,7 +37,7 @@
         setTimeout(function(){
         var baseX = 172;
         var baseY = 65;
-        var x = 150 * Math.cos(degrees*(Math.PI / 180));
+        var x = 150 * Math.cos(degrees*(Math.PI / 180));    4           
         var y = 150 * Math.sin(degrees*(Math.PI / 180));
         console.log(x);
         console.log(y);
@@ -25,18 +46,19 @@
         //length = length > 100? 100: length;
         length = 100;
         x = x< -50 ? x-(length) : x+10;
-        if(x < -170 || x+(length) > 185){
-            x = x < -170 ? -170 : 185 - length;
-            y = y > 0 ?  y+=20 : y -=20;
+        if(x < -170 || x+(length) > 180){
+            x = x < -170 ? -170 : 180 - length;
+            y = y > 0 ?  y+=10 : y -=10;
         }
         console.log(length + ":x:"+ x + ":y:"+ y);
         //var yAdjust = Math.abs(x) < 95 ? 0.05 * (y/Math.abs(y))* Math.pow(Math.abs(y),1.3) : 0;
         yAdjust = 0;
         y = y<0 ? y-10 : y+10;
-        y = y < -170?-170:y;
-        y = y > 170?170:y;
+        y = y < -120?-120:y;
+        x = y < -110 && x > -30  && x < 50 ? x - 50 : x;
+        y = y > 110?110:y;
         x = baseX + x;
-        y = y > 130 ? y + (height*10) : y;
+        y = y > 100 ? y + (height*10) : y;
         y = baseY - y - yAdjust;    
         
         $("#arrow_"+degrees).rotate(degrees);
@@ -203,7 +225,7 @@
         GUESS_COUNT = 0;
         GUESSED_PLACES = new Array();
         UNKNOWN_PLACE = getRandomPlace();
-        //UNKNOWN_PLACE = PLACES[8];
+        //UNKNOWN_PLACE = PLACES[43]; // comment this
         GUESSED_PLACES.push(UNKNOWN_PLACE.code);
         RAND_ANGLE = Math.random() * 360;
         place = getRandomPlace();
