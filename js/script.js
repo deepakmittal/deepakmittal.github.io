@@ -273,4 +273,11 @@ FBInstant.initializeAsync()
     if(window.innerHeight > 830){
         $("#inputBox").css({"margin-top":"180px"});
     }
+    if(window.innerHeight > 600){
+        //$("#bottom-menu").css({"position":"absolute"});
+        //document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=0.8");
+
+    }
+
+
     setup();
