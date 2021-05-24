@@ -75,20 +75,16 @@ FBInstant.initializeAsync()
     }
     
     function getRandomPlace(){
-        return PLACES[Math.floor(Math.random() * PLACES.length)];
+        var keys = Object.keys(PLACES_NOT_VISITED);
+        var key = keys[Math.floor(Math.random() * keys.length)];
+        var place = LEVEL_PLACES[key];
+        delete PLACES_NOT_VISITED[key]
+        return place;
     }
-    function getPlace(id){
-        for(i=0;i<PLACES.length; i++){
-            var place = PLACES[i];
-            if(place['code']==id){
-                return place;
-            }
-        }
-        return null;
-    }
+    
     function getAngle(city1,city2){
-        var c1 = getPlace(city1);
-        var c2 = getPlace(city2);
+        var c1 = PLACES[city1];
+        var c2 = PLACES[city2];
         var y = c2.latitude - c1.latitude;
         var x =  c1.lognitude - c2.lognitude;
         
@@ -123,8 +119,8 @@ FBInstant.initializeAsync()
         
     }
     function addCity(refCity, city){
-        var cRef = getPlace(refCity);
-        var c = getPlace(city);
+        var cRef = PLACES[refCity];
+        var c = PLACES[city];
         var angle = getAngle(refCity, city);
         //angle = angle + RAND_ANGLE;
         //angle = angle % 360;
@@ -133,16 +129,57 @@ FBInstant.initializeAsync()
         addCityAngle(angle,c.code,c.city);
     }
     function setup(){
+        setupBoard();
         setupSelect();
         startPlay();
-
+    }
+    function initialize(){
+        $("#new-button").click(function(){
+            setup();
+        });
+        $(".start-game").click(function(){
+            $('.modal').modal('hide');
+            setup();            
+        });
+        $("#new-game-button").click(function(){
+            $('#game-end-modal').modal('hide');
+            nextGame();
+        });
+        $("#help-button").click(function(){
+            help();
+        });
+    }
+    function setupBoard(){
+        var level = LEVELS[LEVEL-1];
+        $("#level").text(LEVEL);
+        $("#game").text(GAME + " of " + level["games"]);
+        $("#question").text(level['question']);
+        $("#levels-dropdown").html('');
+        for(var i in LEVELS){
+            var l = LEVELS[i];
+            var html = '<li><a href="#" class="level-option" value="'+ (parseInt(i)+1) +'""> '+l['label']+' </a></li>';
+            $("#levels-dropdown").append(html);
+        }
+        $('.level-option').click(function () {           
+            LEVEL = parseInt($(this).attr("value"));
+            GAME = 1;
+            levelStart();
+        });
     }
     function setupSelect(){
         var first = true;
         $("#zone-tabs").html('');
         $("#zone-tabs-content").html('');
-        for(var zoneKey in ZONES){
-            var zone = ZONES[zoneKey];
+        var zones = {};
+        var level = LEVELS[LEVEL-1];
+        for(var i in level["options"]){
+            var code = level["options"][i];
+            var place = PLACES[code];
+            zones[place['continent']] = ZONES[place['continent']];
+        }
+        
+        for(var zoneKey in zones){
+            var zone = zones[zoneKey];
             zone["cities"] = [];
             var html1 = '<li ' + (first? 'class="active"' : '') + '><a data-toggle="tab" href="#'+zoneKey+'">'+zone['label']+'</a></li>';
             var html2 = '<div id="'+zoneKey+'" class="tab-pane fade'+ (first?' in active': '')+'"><div id="tab-content-'+zoneKey+'" class="checkbox"></div></div>';
@@ -150,25 +187,21 @@ FBInstant.initializeAsync()
             $("#zone-tabs-content").append(html2);
             first = false;
         }
-        
-        for(var i=0; i<PLACES.length;i++){
-            var place = PLACES[i];
+        LEVEL_PLACES={};
+        PLACES_NOT_VISITED = {};
+        for(var i in level["options"]){
+            var code = level["options"][i];
+            var place = PLACES[code];
+            LEVEL_PLACES[code] = place;
+            PLACES_NOT_VISITED[code] = place;
+            //console.log(code);
+            //console.log(place);
             var html = '<label id="city-label-'+place.code+'" style="width: 160px"><input id="city-check-'+place.code+'" class="city-check" type="checkbox" value="'+place.code+'">'+place.city+'</label>'
             $("#tab-content-"+place.continent).append(html);
         }
         $(".city-check").change(function(){
             $(this).attr("disabled", true);
             guess($(this).val());
-        });
-        $("#new-button").click(function(){
-            setup();
-        });
-        $("#new-game-button").click(function(){
-            $('#game-end-modal').modal('hide');
-            setup();
-        });
-        $("#help-button").click(function(){
-            help();
         });
     }
     function message(msg, color){
@@ -183,6 +216,7 @@ FBInstant.initializeAsync()
     }
     
     function guess(place){
+        var level = LEVELS[LEVEL];
         if(place == 0 || GUESSED_PLACES.indexOf(place)!== -1){
             return;
         }
@@ -193,8 +227,9 @@ FBInstant.initializeAsync()
             win();
             return;
         }
+        $("#tries").text( (level["max_attempt"] - GUESS_COUNT) + " tries remaining.");
         addPlace(place);
-        if(GUESS_COUNT > 6){
+        if(GUESS_COUNT > level['max_attempt']){
             $(".city-check").attr("disabled", true);
             loose();
         }
@@ -202,25 +237,48 @@ FBInstant.initializeAsync()
 
     function gameEnd(title, content){
         $("#game-end-title").text(title);
-        $("#game-end-content").text(content);
+        $("#game-end-content").html(content);
         $("#game-end-modal").modal('show');
     }
     
     function win(){
         gameEnd(
             "Found! The place is "+ UNKNOWN_PLACE.city +".",
-                GUESS_COUNT < 2 ? "Strike! You found the place in first try!" : "You took " +GUESS_COUNT+ " tries."
+                (GUESS_COUNT < 2 ? "Strike! You found the place in first try!" : "You took " +GUESS_COUNT+ " tries.")+" <h5>Did you know?</h5>" + UNKNOWN_PLACE["do-you-know"]
             );
     }
+    function nextGame(){
+        var level = LEVELS[LEVEL-1];
+        if(GAME < level["games"]){
+            console.log("GAME++");
+            GAME++;
+            setup();
+        }else{
+            GAME = 1;
+            if(LEVEL == LEVELS.length){
+                levelStart();//@TODO add game end message.
+            }else{
+                LEVEL++;
+                levelStart();
+            }
+        }
 
-    function loose(){
-        gameEnd("Game Over!", "Please start reading maps and globes.")
     }
-    
+    function loose(){
+        $("#lost-content").html("The place is "+ UNKNOWN_PLACE.city);
+        $("#lost-modal").modal('show');
+    }
+    function levelStart(){
+        var level = LEVELS[LEVEL-1];
+        $("#level-title").text("New Level");
+        $("#level-content").html(level["intro"]);
+        $("#level-modal").modal('show');
+    }
     function help(){
         $("#help-modal").modal('show');
     }
     function startPlay(){
+        var level = LEVELS[LEVEL];
         $("#wrapper").html("");
         GUESS_COUNT = 0;
         GUESSED_PLACES = new Array();
@@ -228,16 +286,12 @@ FBInstant.initializeAsync()
         //UNKNOWN_PLACE = PLACES[43]; // comment this
         GUESSED_PLACES.push(UNKNOWN_PLACE.code);
         RAND_ANGLE = Math.random() * 360;
-        place = getRandomPlace();
-        place = place.code;
-        for(var i=0;i<3;i++){
-            while(place == UNKNOWN_PLACE.code || GUESSED_PLACES.indexOf(place) !==-1){
-                place = getRandomPlace();
-                console.log(place);
-                place = place.code;
-            }
-            addPlace(place);
+        for(var i=0;i<level["preselect"];i++){
+             place = getRandomPlace();
+             place = place.code;
+             addPlace(place);
         }
+        $("#tries").text(level["max_attempt"] + " tries remaining.");
         //$('#wrapper').rotatable({handleOffset: {left: 170, top:90}});
     }
     function addPlace(place){
@@ -258,6 +312,10 @@ FBInstant.initializeAsync()
     var GUESSED_PLACES = new Array();
     var GUESS_COUNT;
     var RAND_ANGLE;
+    var LEVEL= 1;
+    var GAME= 1;
+    var LEVEL_PLACES = {};
+    var PLACES_NOT_VISITED = {};
 
     jQuery.fn.rotate = function(degrees) {
         degrees = 360 - degrees;
@@ -273,11 +331,16 @@ FBInstant.initializeAsync()
     if(window.innerHeight > 830){
         $("#inputBox").css({"margin-top":"180px"});
     }
-    if(window.innerHeight > 600){
+    if(window.innerHeight < 800){
         //$("#bottom-menu").css({"position":"absolute"});
-        //document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=0.8");
+        //document.getElementById("viewport").setAttribute("content", "width=device-width, initial-scale=1.5");
 
     }
 
-
+    var places = {};
+    for(var i in PLACES){
+        places[PLACES[i]["code"]] = PLACES[i];
+    }
+    PLACES = places;
+    initialize();
     setup();
