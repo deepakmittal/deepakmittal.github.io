@@ -227,9 +227,10 @@ FBInstant.initializeAsync()
             win();
             return;
         }
-        $("#tries").text( (level["max_attempt"] - GUESS_COUNT) + " tries remaining.");
+        var triesLeft = level["max_attempt"] - GUESS_COUNT;
+        $("#tries").text( triesLeft <= 1 ? "last try!" : (triesLeft+ " tries remaining."));
         addPlace(place);
-        if(GUESS_COUNT > level['max_attempt']){
+        if(GUESS_COUNT >= level['max_attempt']){
             $(".city-check").attr("disabled", true);
             loose();
         }
@@ -265,7 +266,7 @@ FBInstant.initializeAsync()
 
     }
     function loose(){
-        $("#lost-content").html("The place is "+ UNKNOWN_PLACE.city);
+        $("#lost-content").html("The place is "+ UNKNOWN_PLACE.city + ".");
         $("#lost-modal").modal('show');
     }
     function levelStart(){

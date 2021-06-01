@@ -19,16 +19,17 @@ LEVELS = [
   {
         'key' : "world_easy",
         'options': [2,4,8,12,13,18,22,26,33,40,41,39,45,11,24,34,20,36],
-        'label' : "Level 1",
-        'question': "can you name this world famous city?",
+        'label' : "Level 1 - Intro",
+        'question': "Can you guess this famous city?",
         'preselect': 5,
         'max_attempt': 5,
-        'games' : 4
+        'games' : 4,
+        'intro': "<h3>The Lost Traveller!</h3>Help the traveller by finding the city."
   },
   {
         'key': "asia_easy",
         'options': [8,17,18,22,25,33,39,45,47],
-        'label' : "Level 2",
+        'label' : "Level 2 - Asia",
         'question': "Which asian city is this?",
         'preselect': 4,
         'max_attempt': 5,
@@ -38,7 +39,7 @@ LEVELS = [
   {
         'key':"europe_easy",
         'options': [10,12,13,14,16,20,28,30,31,36,37,38,43,44],
-        'label' : "Level 3",
+        'label' : "Level 3 - Europe",
         'question': "Find this europian city.",
         'preselect': 4,
         'max_attempt': 5,
@@ -48,7 +49,7 @@ LEVELS = [
   {
         'key':'americas_easy',
         'options': [4,5,6,7,9,26,27,40,41,42,48,49],
-        'label' : "Level 4",
+        'label' : "Level 4 - Americas",
         'question': "Which is this city in Americas?",
         'preselect': 4,
         'max_attempt': 5,
@@ -58,11 +59,11 @@ LEVELS = [
   {     'key': "world_all",
         'options': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49],
         'label' : "Level 5",
-        'question': "Lost! could be anywhere.",
+        'question': "The lost world! Traveller could be anywhere.",
         'preselect': 4,
         'max_attempt': 5,
         'games' : 10,
-        "intro" : "<h3>Lost! could be anywhere.</h3>You need not even listen, just wait…the world will offer itself freely to you, unmasking itself. – Franz Kafka"
+        "intro" : "<h3>The Lost World!</h3>You need not even listen, just wait…the world will offer itself freely to you, unmasking itself. – Franz Kafka"
   }
 
 ]
