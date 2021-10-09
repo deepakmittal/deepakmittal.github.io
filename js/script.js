@@ -216,7 +216,7 @@ FBInstant.initializeAsync()
     }
     
     function guess(place){
-        var level = LEVELS[LEVEL];
+        var level = LEVELS[LEVEL-1];
         if(place == 0 || GUESSED_PLACES.indexOf(place)!== -1){
             return;
         }
@@ -279,7 +279,7 @@ FBInstant.initializeAsync()
         $("#help-modal").modal('show');
     }
     function startPlay(){
-        var level = LEVELS[LEVEL];
+        var level = LEVELS[LEVEL-1];
         $("#wrapper").html("");
         GUESS_COUNT = 0;
         GUESSED_PLACES = new Array();
