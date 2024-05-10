@@ -27,7 +27,7 @@ and open the template in the editor.
               </div>
               <div><br></div></div>
             <div style="margin-top:50px;">
-                <h5 id="question"  style="color:dodgerblue;">Guess this famous city.</h5>
+                <h5 id="question"  style="color:dodgerblue;"></h5>
             </div>
             <div id="map" style="height:130px;margin-top:90px" class="no-globe">
             <div id="unknown" style="color: rgb(51, 51, 51);">
@@ -36,9 +36,9 @@ and open the template in the editor.
             <div id="unknown-position-circle" style="width: 321px;position: absolute;z-index: -1;transform: rotate(360deg);/* color: rgb(51, 51, 51); */margin-top: 51px;margin-left: -132px;">
               <img src="img/circle.png" width="60px" style="float:right;opacity: 0.5">
             </div> 
-            <div id="north" style="width: 321px;position: absolute;z-index: -1;transform: rotate(360deg);/* color: rgb(51, 51, 51); */margin-top: -110px;margin-left: 23px;">
+            <!--div id="north" style="width: 321px;position: absolute;z-index: -1;transform: rotate(360deg);/* color: rgb(51, 51, 51); */margin-top: -110px;margin-left: 23px;">
               <img src="img/north.png" width="40px" style="float:right;opacity: 1">
-            </div>
+            </div-->
             
             <div id="wrapper">
             </div>
@@ -90,15 +90,18 @@ and open the template in the editor.
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-body">
-                  <h4>How to play</h4>
+			<img src="img/help.png" width="300px" style="
+    			display: block;
+    			margin-left: auto;
+    			margin-right: auto;">	
                   <div>
-                    Find the city.
+		  <h4> How to play </h4>	
                     <ul>
-                      <li> Arrows show the direction to certain cities from the unknown city.</li>
-                      <li> With arrows as hints, guess the unknown city by selecting one city from the list at the bottom.</li>
-                      <li> Each incorrect guess adds an arrow as a new hint.</li>
-                      <li> Earth is round!</li>
-                    </ul>
+                    	<li>Traveller wakes up at an unown place. </li>
+			<li>Finds direction boards.<br></li>
+					
+			<li>Help traveller recall his location so that he can plan his iternary.</li>
+		    </ul>
                   </div>
                 </div>
                 <div class="modal-footer">

@@ -124,7 +124,7 @@ FBInstant.initializeAsync()
         var angle = getAngle(refCity, city);
         //angle = angle + RAND_ANGLE;
         //angle = angle % 360;
-//console.log(angle);
+	console.log(angle);
         //angle = angle > 180 ? angle = -1 * (180-angle) : angle;
         addCityAngle(angle,c.code,c.city);
     }
@@ -148,6 +148,7 @@ FBInstant.initializeAsync()
         $("#help-button").click(function(){
             help();
         });
+	help();
     }
     function setupBoard(){
         var level = LEVELS[LEVEL-1];
@@ -286,7 +287,7 @@ FBInstant.initializeAsync()
         UNKNOWN_PLACE = getRandomPlace();
         //UNKNOWN_PLACE = PLACES[43]; // comment this
         GUESSED_PLACES.push(UNKNOWN_PLACE.code);
-        RAND_ANGLE = Math.random() * 360;
+        RAND_ANGLE = parseInt(Math.random() * 360);
         for(var i=0;i<level["preselect"];i++){
              place = getRandomPlace();
              place = place.code;

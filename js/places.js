@@ -20,18 +20,18 @@ LEVELS = [
         'key' : "world_easy",
         'options': [2,4,8,12,13,18,22,26,33,40,41,39,45,11,24,34,20,36],
         'label' : "Level 1 - Intro",
-        'question': "Can you guess this famous city?",
-        'preselect': 5,
+        'question': "Can you guess this city?",
+        'preselect': 2,
         'max_attempt': 5,
         'games' : 4,
-        'intro': "<h3>The Lost Traveller!</h3>Help the traveller by finding the city."
+        'intro': "<h3>The Lost Traveller!</h3>Help the traveller finding the city."
   },
   {
         'key': "asia_easy",
         'options': [8,17,18,22,25,33,39,45,47],
         'label' : "Level 2 - Asia",
         'question': "Which asian city is this?",
-        'preselect': 4,
+        'preselect': 2,
         'max_attempt': 5,
         'games' : 4,
         'intro': "<h3>Lost in Asia!</h3>From the nomadic steppes of Kazakhstan to the frenetic streets of Hanoi, Asia is a continent so full of intrigue, adventure, solace and spirituality that it has fixated and confounded travellers for centuries."
@@ -41,7 +41,7 @@ LEVELS = [
         'options': [10,12,13,14,16,20,28,30,31,36,37,38,43,44],
         'label' : "Level 3 - Europe",
         'question': "Find this europian city.",
-        'preselect': 4,
+        'preselect': 2,
         'max_attempt': 5,
         'games' : 5,
         "intro" : "<h3>Moving to Europe!</h3>Europe is home to the most diverse and culturally unique countries. Each country has something different to offer, speaks distinct languages and has unique cuisines to offer. Another reason why tourists love Europe is because of its varied and scenic landscapes, pleasant weather and beautiful environment. You can visit the awesome glaciers in Greenland, explore the national parks in Germany, sip wine in the vineyards of France, climb the Alps in Switzerland, and get lost in the cities of UK!"
@@ -51,7 +51,7 @@ LEVELS = [
         'options': [4,5,6,7,9,26,27,40,41,42,48,49],
         'label' : "Level 4 - Americas",
         'question': "Which is this city in Americas?",
-        'preselect': 4,
+        'preselect': 2,
         'max_attempt': 5,
         'games' : 5,
         "intro" : "<h3>North and South America!</h3>It might span two continents, 23 countries and almost a billion people, but there's a common thread that binds the Americas together: romance. It's undeniable. There's so much that's romantic about this amazing part of the world: the natural beauty, the cultural heritage, the passions, the beliefs and the desires. There's romance in the tango danced in a Buenos Aires club. There's romance in the snowy mountain peaks of an Alaskan range. There's romance in a beachside bungalow in Belize, and on the city walls in Cartagena, Colombia."
@@ -60,7 +60,7 @@ LEVELS = [
         'options': [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49],
         'label' : "Level 5",
         'question': "The lost world! Traveller could be anywhere.",
-        'preselect': 4,
+        'preselect': 2,
         'max_attempt': 5,
         'games' : 10,
         "intro" : "<h3>The Lost World!</h3>You need not even listen, just wait…the world will offer itself freely to you, unmasking itself. – Franz Kafka"
